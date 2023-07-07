@@ -1,0 +1,16 @@
+{
+  "name": "alura-express-api",
+  "version": "1.0.0",
+  "description": "Creating Alura Books project in order to learn more about Express framework and REST APIs.",
+  "main": "index.js",
+  "module": "exports",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
