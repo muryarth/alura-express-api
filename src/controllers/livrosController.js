@@ -10,8 +10,8 @@ class LivroController {
     // (COLEÇÃO é o equivalente a uma TABELA em bancos relacionais)
     static listarLivros = async (req, res) => {
         try {
-            const resultado = await livros.find();
-            res.status(200).json(resultado); // Envia o resultado da coleção, em formato json
+            const resultado = await livros.find().populate(["autor", "editora"]); // Populate puxa as informações do autor baseado no id
+            res.status(200).json(resultado) // Envia o resultado da coleção, em formato json
         }
         catch (err) {
             res.status(500).json({ message: `${err.message} - Cannot GET` }); // Captura o erro e envia para o usuário
@@ -22,7 +22,9 @@ class LivroController {
         const id = req.params.id;
 
         try {
-            const resultado = await livros.findById(id);
+            const resultado = await livros.findById(id)
+                .populate("autor", "nome")
+                .populate("editora");
             res.status(200).json(resultado); // Envia o resultado da coleção, em formato json
         }
         catch (err) {
@@ -67,6 +69,18 @@ class LivroController {
         catch (err) {
             res.status(400).send({ message: `${err.message} - Cannot DELETE` });
         }
+    }
+
+    static listarLivrosPorEditora = async (req, res) => {
+        const editora = req.query.editora;
+
+        try {
+            const resultado = await livros.find({ 'editora': editora }, {})
+            res.status(200).send(resultado);
+        } catch (err) {
+            res.status(500).send({ message: `${err.message} - Cannot GET` });
+        }
+
     }
 }
 
