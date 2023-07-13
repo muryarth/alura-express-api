@@ -1,5 +1,8 @@
-const http = require("http"); //módulo nativo do node
-const chalk = require("chalk");
+//este arquivo foi mantido com a finalidade de ser comparado com o arquivo principal que está sendo usado na aplicação
+
+import http from "http"; //módulo nativo do node
+import chalk from "chalk";
+
 const port = 3000;
 
 const rotas = {
@@ -16,5 +19,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, () => { //criação do listener, que faz com que o servidor "escute" num porta específica
-    console.log(chalk.green(`Servidor escutando em http://localhost:${port}`));
+    console.log(chalk.green(`Servidor escutando em `) + chalk.blue(`http://localhost:${port}`));
 });

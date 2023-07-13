@@ -3,14 +3,19 @@
   "version": "1.0.0",
   "description": "Creating Alura Books project in order to learn more about Express framework and REST APIs.",
   "main": "index.js",
-  "module": "exports",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "dev": "nodemon serverExpress.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.3.4"
   }
 }
