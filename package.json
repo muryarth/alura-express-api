@@ -2,7 +2,7 @@
   "name": "alura-express-api",
   "version": "1.0.0",
   "description": "Creating Alura Books project in order to learn more about Express framework and REST APIs.",
-  "main": "index.js",
+  "main": "serverExpress.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

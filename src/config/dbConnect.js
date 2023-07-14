@@ -9,7 +9,6 @@ const __dirname = path.dirname(__filename);
 
 dotenv.config({ path: path.resolve(__dirname, ".env") });
 
-// console.log(process.env.db_username, process.env.db_password);
 mongoose.connect(`mongodb+srv://${process.env.db_username}:${process.env.db_password}@cluster0.1zmcs.mongodb.net/alura-node`);
 
 let db = mongoose.connection;
