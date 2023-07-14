@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Creating Alura Books project in order to learn more about Express framework and REST APIs.",
   "main": "index.js",
+  "start": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon serverExpress.js"
+    "dev": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
